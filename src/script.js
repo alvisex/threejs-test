@@ -5,7 +5,8 @@ import * as dat from 'dat.gui'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 const loader = new GLTFLoader();
 import gsap from 'gsap'
-
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+gsap.registerPlugin(ScrollTrigger)
 
 
 // Debug
@@ -40,10 +41,53 @@ loader.load(
         gui.add(gltf.scene.scale, 'y').min(1).max(4)
         gui.add(gltf.scene.position, 'x').min(1).max(4)
 
-        tl.to(gltf.scene.rotation, { y: 3.7, duration: 1 })
-        tl.to(gltf.scene.scale, { x: 0.8, y: 0.8, z: 0.8, duration: 1 }, '<')
-        tl.to(gltf.scene.position, { x: 0.5, duration: 1 })
-        tl.to(gltf.scene.rotation, { y: -2.7, duration: 1 })
+        const common = {
+            start: "top center",
+            end: "bottom center",
+            scrub: true,
+            markers: true
+        }
+
+
+        /*  tl.to(gltf.scene.rotation, { y: 3.7, duration: 1 })
+         tl.to(gltf.scene.scale, { x: 0.8, y: 0.8, z: 0.8, duration: 1 }, '<')
+         tl.to(gltf.scene.position, { x: 0.5, duration: 1 })
+         tl.to(gltf.scene.rotation, { y: -2.7, duration: 1 }) */
+        gsap.to(gltf.scene.scale, {
+            x: 0.8, y: 0.8, z: 0.8,
+            ease: "none",
+            scrollTrigger: {
+                trigger: "#demo-1",
+                ...common
+            }
+        })
+
+        gsap.to(gltf.scene.rotation, {
+            y: 5.7,
+            ease: "none",
+            scrollTrigger: {
+                trigger: "#demo-2",
+                ...common
+            }
+        })
+
+        gsap.to(gltf.scene.position, {
+            x: 2,
+            ease: "none",
+            scrollTrigger: {
+                trigger: "#demo-3",
+                ...common
+            }
+        })
+
+        gsap.to(gltf.scene.rotation, {
+            z: -2.7,
+            ease: "none",
+            scrollTrigger: {
+                trigger: "#demo-4",
+                ...common
+            }
+        })
 
     },
     // called while loading is progressing

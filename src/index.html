@@ -1,168 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ThreeJS Starter</title>
     <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body>
-    <div class="text-3xl font-bold underline "> golaaaa</div>
+  </head>
+  <body>
+    <section class="w-screen h-screen"></section>
+    <section id="demo-1" class="w-screen h-screen bg-orange-300"></section>
+    <section id="demo-2" class="w-screen h-screen bg-green-300"></section>
+    <section id="demo-3" class="w-screen h-screen bg-yellow-800"></section>
+    <section id="demo-4" class="w-screen h-screen bg-cyan-300"></section>
+    <section class="w-screen h-screen"></section>
     <canvas class="webgl"></canvas>
-   <!--  <svg viewBox="0 0 580 580" width="580" height="580" preserveAspectRatio="xMidYMid meet" style="overflow: visible;">
-        <g data-svg-origin="290 290" transform="matrix(1,0,0,1,0,0)" style="transform-origin: 0px 0px;">
-            <path class="particle" d="M 421.5 290 L 449.5 290" stroke-linecap="round" stroke-linejoin="miter"
-                stroke-miterlimit="4" stroke="rgb(195,49,48)" stroke-width="3" data-x-origin="-65.75" data-y-origin="0"
-                style="transform-origin: 0px 0px; opacity: 0.999574;" data-svg-origin="421.5 290"
-                transform="matrix(1,0,0,1,-4.44205,0)"></path>
-            <path class="particle" d="M 396.3857347603056 367.29376067646024 L 419.03821060280416 383.7517477406495"
-                stroke-linecap="round" stroke-linejoin="miter" stroke-miterlimit="4" stroke="rgb(195,49,48)"
-                stroke-width="3" data-x-origin="-53.1928673801528" data-y-origin="-38.64688033823011"
-                style="transform-origin: 0px 0px; opacity: 0.762878;" data-svg-origin="396.3857421875 367.29376220703125"
-                transform="matrix(1,0,0,1,-29.61477,-21.51639)"></path>
-            <path class="particle" d="M 330.6357347603056 415.06393189281266 L 339.2882106028041 441.69351434907696"
-                stroke-linecap="round" stroke-linejoin="miter" stroke-miterlimit="4" stroke="rgb(195,49,48)"
-                stroke-width="3" data-x-origin="-20.31786738015279" data-y-origin="-62.53196594640633"
-                style="transform-origin: 0px 0px; opacity: 0.974567;" data-svg-origin="330.6357421875 415.0639343261719"
-                transform="matrix(1,0,0,1,-5.16372,-15.8923)"></path>
-            <path class="particle" d="M 249.36426523969442 415.0639318928127 L 240.7117893971959 441.693514349077"
-                stroke-linecap="round" stroke-linejoin="miter" stroke-miterlimit="4" stroke="rgb(195,49,48)"
-                stroke-width="3" data-x-origin="20.31786738015279" data-y-origin="-62.531965946406366"
-                style="transform-origin: 0px 0px; opacity: 0.993649;" data-svg-origin="240.7117919921875 415.0639343261719"
-                transform="matrix(1,0,0,1,3.2859,-10.11296)"></path>
-            <path class="particle" d="M 183.61426523969442 367.29376067646024 L 160.9617893971959 383.7517477406495"
-                stroke-linecap="round" stroke-linejoin="miter" stroke-miterlimit="4" stroke="rgb(195,49,48)"
-                stroke-width="3" data-x-origin="53.19286738015279" data-y-origin="-38.64688033823012"
-                style="transform-origin: 0px 0px; opacity: 0.999439;" data-svg-origin="160.9617919921875 367.29376220703125"
-                transform="matrix(1,0,0,1,-2.81105,2.04235)"></path>
-            <path class="particle" d="M 158.5 290 L 130.5 290" stroke-linecap="round" stroke-linejoin="miter"
-                stroke-miterlimit="4" stroke="rgb(195,49,48)" stroke-width="3" data-x-origin="65.75"
-                data-y-origin="-8.052052704393847e-15" style="transform-origin: 0px 0px; opacity: 0.902805;"
-                data-svg-origin="130.5 290" transform="matrix(1,0,0,1,-1.73657,0)"></path>
-            <path class="particle" d="M 183.6142652396944 212.7062393235398 L 160.96178939719587 196.24825225935055"
-                stroke-linecap="round" stroke-linejoin="miter" stroke-miterlimit="4" stroke="rgb(195,49,48)"
-                stroke-width="3" data-x-origin="53.192867380152805" data-y-origin="38.646880338230105"
-                style="transform-origin: 0px 0px; opacity: 0.997635;" data-svg-origin="160.9617919921875 196.2482452392578"
-                transform="matrix(1,0,0,1,-2.75982,-2.00512)"></path>
-            <path class="particle" d="M 249.3642652396944 164.9360681071873 L 240.71178939719587 138.306485650923"
-                stroke-linecap="round" stroke-linejoin="miter" stroke-miterlimit="4" stroke="rgb(195,49,48)"
-                stroke-width="3" data-x-origin="20.3178673801528" data-y-origin="62.531965946406345"
-                style="transform-origin: 0px 0px; opacity: 0.992444;" data-svg-origin="240.7117919921875 138.30648803710938"
-                transform="matrix(1,0,0,1,-0.98009,-3.01641)"></path>
-            <path class="particle" d="M 330.6357347603056 164.93606810718728 L 339.2882106028041 138.30648565092298"
-                stroke-linecap="round" stroke-linejoin="miter" stroke-miterlimit="4" stroke="rgb(195,49,48)"
-                stroke-width="3" data-x-origin="-20.317867380152784" data-y-origin="62.531965946406366"
-                style="transform-origin: 0px 0px; opacity: 0.940388;" data-svg-origin="330.6357421875 138.30648803710938"
-                transform="matrix(1,0,0,1,-6.88665,21.19493)"></path>
-            <path class="particle" d="M 396.3857347603056 212.70623932353976 L 419.0382106028041 196.2482522593505"
-                stroke-linecap="round" stroke-linejoin="miter" stroke-miterlimit="4" stroke="rgb(195,49,48)"
-                stroke-width="3" data-x-origin="-53.19286738015279" data-y-origin="38.646880338230126"
-                style="transform-origin: 0px 0px; opacity: 0.992264;" data-svg-origin="396.3857421875 196.2482452392578"
-                transform="matrix(1,0,0,1,2.56017,-1.86007)"></path>
-        </g>
-        <g data-svg-origin="290 289.99998474121094"
-            transform="matrix(0.64279,0.76604,-0.76604,0.64279,325.74249,-118.56071)" style="transform-origin: 0px 0px;">
-            <path class="particle" d="M 443.29171301381393 290 L 514.75 290" stroke-linecap="round" stroke-linejoin="miter"
-                stroke-miterlimit="4" stroke="rgb(195,49,48)" stroke-width="3" data-x-origin="-76.64585650690697"
-                data-y-origin="0" style="transform-origin: 0px 0px; opacity: 0.999986;"
-                data-svg-origin="443.2917175292969 290" transform="matrix(1,0,0,1,-1.35522,0)"></path>
-            <path class="particle" d="M 414.0156009250228 380.10260820817 L 471.8265694857694 422.10473545273334"
-                stroke-linecap="round" stroke-linejoin="miter" stroke-miterlimit="4" stroke="rgb(195,49,48)"
-                stroke-width="3" data-x-origin="-62.0078004625114" data-y-origin="-45.05130410408501"
-                style="transform-origin: 0px 0px; opacity: 0.603591;" data-svg-origin="414.0155944824219 380.10260009765625"
-                transform="matrix(1,0,0,1,-42.10214,-30.589)"></path>
-            <path class="particle" d="M 337.36974441811583 435.78908255583434 L 359.4515694857694 503.7499520373358"
-                stroke-linecap="round" stroke-linejoin="miter" stroke-miterlimit="4" stroke="rgb(195,49,48)"
-                stroke-width="3" data-x-origin="-23.6848722090579" data-y-origin="-72.89454127791717"
-                style="transform-origin: 0px 0px; opacity: 1;" data-svg-origin="337.3697509765625 435.7890930175781"
-                transform="matrix(1,0,0,1,0.77616,2.38876)"></path>
-            <path class="particle" d="M 242.63025558188423 435.78908255583434 L 220.54843051423057 503.7499520373358"
-                stroke-linecap="round" stroke-linejoin="miter" stroke-miterlimit="4" stroke="rgb(195,49,48)"
-                stroke-width="3" data-x-origin="23.68487220905789" data-y-origin="-72.89454127791717"
-                style="transform-origin: 0px 0px; opacity: 0.94991;" data-svg-origin="220.54843139648438 435.7890930175781"
-                transform="matrix(1,0,0,1,7.56249,-23.27496)"></path>
-            <path class="particle" d="M 165.98439907497726 380.10260820817 L 108.17343051423057 422.1047354527334"
-                stroke-linecap="round" stroke-linejoin="miter" stroke-miterlimit="4" stroke="rgb(195,49,48)"
-                stroke-width="3" data-x-origin="62.00780046251136" data-y-origin="-45.051304104085006"
-                style="transform-origin: 0px 0px; opacity: 0.764088;"
-                data-svg-origin="108.17343139648438 380.10260009765625" transform="matrix(1,0,0,1,-0.89376,0.64936)"></path>
-            <path class="particle" d="M 136.70828698618607 290 L 65.25 290" stroke-linecap="round" stroke-linejoin="miter"
-                stroke-miterlimit="4" stroke="rgb(195,49,48)" stroke-width="3" data-x-origin="76.64585650690697"
-                data-y-origin="-9.386410283909095e-15" style="transform-origin: 0px 0px; opacity: 0.999422;"
-                data-svg-origin="65.25 290" transform="matrix(1,0,0,1,5.7285,0)"></path>
-            <path class="particle" d="M 165.9843990749772 199.89739179183 L 108.17343051423055 157.8952645472667"
-                stroke-linecap="round" stroke-linejoin="miter" stroke-miterlimit="4" stroke="rgb(195,49,48)"
-                stroke-width="3" data-x-origin="62.007800462511405" data-y-origin="45.051304104085006"
-                style="transform-origin: 0px 0px; opacity: 0.554998;" data-svg-origin="108.17343139648438 157.895263671875"
-                transform="matrix(1,0,0,1,44.08635,32.03061)"></path>
-            <path class="particle" d="M 242.63025558188417 144.21091744416566 L 220.54843051423052 76.25004796266424"
-                stroke-linecap="round" stroke-linejoin="miter" stroke-miterlimit="4" stroke="rgb(195,49,48)"
-                stroke-width="3" data-x-origin="23.684872209057907" data-y-origin="72.89454127791717"
-                style="transform-origin: 0px 0px; opacity: 0.999462;" data-svg-origin="220.54843139648438 76.25004577636719"
-                transform="matrix(1,0,0,1,1.72978,5.32371)"></path>
-            <path class="particle" d="M 337.3697444181158 144.21091744416566 L 359.45156948576937 76.25004796266421"
-                stroke-linecap="round" stroke-linejoin="miter" stroke-miterlimit="4" stroke="rgb(195,49,48)"
-                stroke-width="3" data-x-origin="-23.684872209057882" data-y-origin="72.89454127791717"
-                style="transform-origin: 0px 0px; opacity: 0.848641;" data-svg-origin="337.3697509765625 76.25004577636719"
-                transform="matrix(1,0,0,1,-11.16442,34.36055)"></path>
-            <path class="particle" d="M 414.01560092502274 199.89739179182996 L 471.8265694857694 157.8952645472666"
-                stroke-linecap="round" stroke-linejoin="miter" stroke-miterlimit="4" stroke="rgb(195,49,48)"
-                stroke-width="3" data-x-origin="-62.007800462511376" data-y-origin="45.05130410408502"
-                style="transform-origin: 0px 0px; opacity: 0.936196;" data-svg-origin="414.0155944824219 157.895263671875"
-                transform="matrix(1,0,0,1,1.95175,-1.41803)"></path>
-        </g>
-        <g data-svg-origin="290 290.0000066757202" transform="matrix(-0.17365,0.98481,-0.98481,-0.17365,625.95341,54.76361)"
-            style="transform-origin: 0px 0px;">
-            <path class="particle" d="M 565.5967477524978 290 L 580 290" stroke-linecap="round" stroke-linejoin="miter"
-                stroke-miterlimit="4" stroke="rgb(195,49,48)" stroke-width="3" data-x-origin="-137.7983738762489"
-                data-y-origin="0" style="transform-origin: 0px 0px; opacity: 0.539727;"
-                data-svg-origin="565.5967407226562 290" transform="matrix(1,0,0,1,0.76687,0)"></path>
-            <path class="particle" d="M 512.9624525262362 451.991703908687 L 524.6149283687348 460.4577231648172"
-                stroke-linecap="round" stroke-linejoin="miter" stroke-miterlimit="4" stroke="rgb(195,49,48)"
-                stroke-width="3" data-x-origin="-111.48122626311813" data-y-origin="-80.99585195434348"
-                style="transform-origin: 0px 0px; opacity: 0.881449;" data-svg-origin="512.9624633789062 451.99169921875"
-                transform="matrix(1,0,0,1,-48.10704,-34.95181)"></path>
-            <path class="particle" d="M 375.1640786499874 552.1080828197646 L 379.61492836873475 565.8063897255945"
-                stroke-linecap="round" stroke-linejoin="miter" stroke-miterlimit="4" stroke="rgb(195,49,48)"
-                stroke-width="3" data-x-origin="-42.582039324993694" data-y-origin="-131.0540414098823"
-                style="transform-origin: 0px 0px; opacity: 0.997785;" data-svg-origin="375.1640930175781 552.1080932617188"
-                transform="matrix(1,0,0,1,2.21432,6.81496)"></path>
-            <path class="particle" d="M 204.83592135001263 552.1080828197647 L 200.38507163126528 565.8063897255945"
-                stroke-linecap="round" stroke-linejoin="miter" stroke-miterlimit="4" stroke="rgb(195,49,48)"
-                stroke-width="3" data-x-origin="42.582039324993694" data-y-origin="-131.0540414098824"
-                style="transform-origin: 0px 0px; opacity: 0.987851;" data-svg-origin="200.38507080078125 552.1080932617188"
-                transform="matrix(1,0,0,1,8.4909,-26.13231)"></path>
-            <path class="particle" d="M 67.03754747376377 451.991703908687 L 55.385071631265276 460.45772316481725"
-                stroke-linecap="round" stroke-linejoin="miter" stroke-miterlimit="4" stroke="rgb(195,49,48)"
-                stroke-width="3" data-x-origin="111.48122626311812" data-y-origin="-80.9958519543435"
-                style="transform-origin: 0px 0px; opacity: 0.256606;" data-svg-origin="55.38507080078125 451.99169921875"
-                transform="matrix(1,0,0,1,97.9688,-71.1785)"></path>
-            <path class="particle" d="M 14.40325224750228 290.00000000000006 L 0 290.00000000000006" stroke-linecap="round"
-                stroke-linejoin="miter" stroke-miterlimit="4" stroke="rgb(195,49,48)" stroke-width="3"
-                data-x-origin="137.79837387624886" data-y-origin="-1.687543374952584e-14"
-                style="transform-origin: 0px 0px; opacity: 0.9987;" data-svg-origin="0 290"
-                transform="matrix(1,0,0,1,-7.25806,0)"></path>
-            <path class="particle" d="M 67.03754747376371 128.00829609131307 L 55.38507163126522 119.54227683518283"
-                stroke-linecap="round" stroke-linejoin="miter" stroke-miterlimit="4" stroke="rgb(195,49,48)"
-                stroke-width="3" data-x-origin="111.48122626311817" data-y-origin="80.99585195434348"
-                style="transform-origin: 0px 0px; opacity: 0.999955;" data-svg-origin="55.38507080078125 119.54227447509766"
-                transform="matrix(1,0,0,1,3.32262,2.41402)"></path>
-            <path class="particle" d="M 204.83592135001257 27.89191718023534 L 200.3850716312652 14.1936102744055"
-                stroke-linecap="round" stroke-linejoin="miter" stroke-miterlimit="4" stroke="rgb(195,49,48)"
-                stroke-width="3" data-x-origin="42.582039324993715" data-y-origin="131.05404140988233"
-                style="transform-origin: 0px 0px; opacity: 0.654692;"
-                data-svg-origin="200.38507080078125 14.193610191345215" transform="matrix(1,0,0,1,27.38556,84.2841)"></path>
-            <path class="particle" d="M 375.16407864998735 27.891917180235282 L 379.6149283687347 14.193610274405444"
-                stroke-linecap="round" stroke-linejoin="miter" stroke-miterlimit="4" stroke="rgb(195,49,48)"
-                stroke-width="3" data-x-origin="-42.58203932499368" data-y-origin="131.0540414098824"
-                style="transform-origin: 0px 0px; opacity: 0.912227;" data-svg-origin="375.1640930175781 14.193610191345215"
-                transform="matrix(1,0,0,1,1.17897,-3.62849)"></path>
-            <path class="particle" d="M 512.9624525262362 128.00829609131299 L 524.6149283687347 119.54227683518272"
-                stroke-linecap="round" stroke-linejoin="miter" stroke-miterlimit="4" stroke="rgb(195,49,48)"
-                stroke-width="3" data-x-origin="-111.48122626311813" data-y-origin="80.99585195434352"
-                style="transform-origin: 0px 0px; opacity: 0.998919;" data-svg-origin="512.9624633789062 119.54227447509766"
-                transform="matrix(1,0,0,1,-10.21997,7.42524)"></path>
-        </g>
-    </svg> -->
-</body>
+  </body>
 </html>
